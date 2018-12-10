@@ -1,0 +1,25 @@
+.contact {
+  padding: 5em 0; }
+  .contact h1 {
+    text-align: center; }
+  .contact form {
+    display: flex;
+    flex-direction: column; }
+  .contact label {
+    display: block;
+    margin-top: 1em; }
+  .contact input, .contact textarea {
+    box-sizing: border-box;
+    display: block;
+    padding: .75em;
+    width: 100%;
+    min-width: 15em;
+    font-size: 1.2rem; }
+  .contact .button {
+    display: inline-block;
+    width: auto;
+    margin-top: 1em;
+    margin-left: auto;
+    min-width: auto;
+    border: none;
+    padding: .5em 1.5em; }
