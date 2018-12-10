@@ -315,11 +315,12 @@ h1 {
 
 h2 {
   font-size: 2rem;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.09em;
   color: #606060;
   text-transform: uppercase;
   line-height: 1;
-  font-family: "Six Caps", sans-serif; }
+  font-family: "Six Caps", sans-serif;
+  font-weight: 400; }
 
 .welcome {
   background-image: url(../img/header-bg.png);
@@ -337,11 +338,12 @@ h2 {
     text-align: center; }
     .welcome h1 span {
       font-size: 5.5rem;
-      letter-spacing: 0.3em;
+      letter-spacing: 0.09em;
       color: #03AFC2;
       text-transform: uppercase;
       line-height: 1;
       font-family: "Six Caps", sans-serif;
+      font-weight: 400;
       display: block; }
     .welcome h1::before, .welcome h1::after {
       content: '';
@@ -353,3 +355,72 @@ h2 {
       margin: 0 auto 2em; }
     .welcome h1::after {
       margin: 2em auto 0; }
+
+.intro {
+  display: flex;
+  color: rgba(255, 255, 255, 0.7); }
+  .intro h2 {
+    color: #FFF; }
+    .intro h2::after {
+      content: '';
+      height: 1px;
+      width: 20%;
+      background: rgba(255, 255, 255, 0.5);
+      display: block;
+      margin: 1em auto 0; }
+  @supports (display: grid) {
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(4em, 1fr) minmax(auto, 30em) minmax(4em, 1fr); } }
+  .intro-middle {
+    background: #223843;
+    padding: 2.5em 2vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center; }
+  .intro .intro-left img,
+  .intro .intro-right img {
+    object-fit: cover;
+    min-height: 100%;
+    min-width: 100%;
+    display: block; }
+
+.about-me {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 50em;
+  margin-top: 3em; }
+  .about-me::after {
+    content: '';
+    display: block;
+    clear: both; }
+
+.about-image {
+  max-width: 25em; }
+  @media (min-width: 42em) {
+    .about-image {
+      float: left;
+      margin-right: 1em; } }
+
+.about-title {
+  margin-bottom: .25em; }
+
+.about-subtitle {
+  margin: .5em 0; }
+
+@supports (display: grid) {
+  .about-me {
+    display: grid;
+    grid-template-columns: [port-start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [img-end] 2fr [port-end]; }
+  .about-image {
+    grid-column: port/ img;
+    grid-row: 1/2; }
+  .about-title {
+    grid-column: name / port;
+    grid-row: 1 /2;
+    align-self: end; }
+  .about-subtitle,
+  .about-text {
+    grid-column: port / port; } }
