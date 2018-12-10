@@ -510,6 +510,9 @@ h2 {
   .portfolio-items {
     display: grid;
     grid-template-columns: repeat(2, 1fr); }
+    @media (min-width: 50em) {
+      .portfolio-items {
+        grid-template-columns: repeat(4, 1fr); } }
   .portfolio-item.featured {
     grid-column: 1 / span 2;
     grid-row: 1 / span 2; }
@@ -528,6 +531,23 @@ h2 {
   .contact form {
     display: flex;
     flex-direction: column; }
+    @supports (display: grid) {
+      @media (min-width: 50em) {
+        .contact form {
+          display: grid;
+          grid-column: 1fr 1fr;
+          grid-column-gap: 1em;
+          grid-template-areas: "name        email" "message     message" "   .        button"; }
+          .contact form .name {
+            grid-area: name; }
+          .contact form .email {
+            grid-area: email; }
+          .contact form .message {
+            grid-area: message; }
+            .contact form .message textarea {
+              height: 10em; }
+          .contact form .button {
+            grid-area: button; } } }
   .contact label {
     display: block;
     margin-top: 1em;
@@ -537,6 +557,7 @@ h2 {
     display: block;
     padding: .75em;
     width: 100%;
+    min-width: 15em;
     background: #fbfbfc;
     border: 1px solid #E8E9EB;
     font-size: 1.2rem; }
@@ -545,6 +566,7 @@ h2 {
     width: auto;
     margin-top: 1em;
     margin-left: auto;
+    min-width: auto;
     background: #03AFC2;
     border: none;
     font-size: 2.5rem;
