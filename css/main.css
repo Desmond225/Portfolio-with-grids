@@ -299,7 +299,8 @@ body {
   font-family: "Merriweather", sans-serif;
   line-height: 1.6;
   background: #FFF;
-  font-size: .875rem; }
+  font-size: .875rem;
+  overflow-x: hidden; }
   @media (min-width: 50em) {
     body {
       font-size: 1.125rem; } }
@@ -613,8 +614,7 @@ nav {
   top: 0;
   bottom: 0;
   left: 0;
-  right: 15%;
-  z-index: 10;
+  right: 20%;
   transform: translateX(-100%);
   transition: transform ease-out 250ms; }
 
@@ -632,13 +632,15 @@ nav ul {
 nav li {
   border-bottom: 1px solid #223843;
   text-align: center; }
+  nav li:not(:last-of-type) {
+    border-bottom: 1px solid #223843; }
   nav li:hover {
     background: rgba(34, 56, 67, 0.5); }
 
 nav a {
   display: inline-block;
   font-size: 4rem;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.05em;
   color: #223843;
   text-transform: uppercase;
   line-height: 1;
@@ -651,17 +653,17 @@ nav a {
 .close-icon {
   display: none; }
 
-.nav-is-open nav {
-  transform: translateX(0); }
-
-.nav-is-open .container-all {
-  transform: translateX(80%); }
-
-.nav-is-open .hamburger {
-  display: none; }
-
-.nav-is-open .close-icon {
-  display: block; }
+.nav-is-open {
+  height: 100vh;
+  overflow: hidden; }
+  .nav-is-open nav {
+    transform: translateX(0); }
+  .nav-is-open .container-all {
+    transform: translateX(80%); }
+  .nav-is-open .hamburger {
+    display: none; }
+  .nav-is-open .close-icon {
+    display: block; }
 
 .container-all {
   transition: transform ease-out 250ms; }

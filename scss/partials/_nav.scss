@@ -1,4 +1,4 @@
-@mixin sans-serif($fs, $ls: .09em, $color: $dark-grey, $tt: uppercase, $lh: 1) {
+@mixin sans-serif($fs, $ls: .05em, $color: $dark-grey, $tt: uppercase, $lh: 1) {
     font-size: $fs;
     letter-spacing: $ls;
     color: $color;
@@ -21,8 +21,7 @@ nav {
     top: 0;
     bottom: 0;
     left: 0;
-    right: 15%;
-    z-index: 10;
+    right: 20%;
 
     transform: translateX(-100%);
     transition: transform ease-out 250ms;
@@ -43,6 +42,10 @@ nav ul {
 nav li {
     border-bottom: 1px solid $dark-blue;
     text-align: center;
+
+    &:not(:last-of-type) {
+        border-bottom: 1px solid $dark-blue;
+    }
     
     &:hover {
         background: rgba($dark-blue, .5);
@@ -62,6 +65,8 @@ nav a {
 }
 
 .nav-is-open {
+    height: 100vh;
+    overflow: hidden;
     nav {
         transform: translateX(0);
     }
